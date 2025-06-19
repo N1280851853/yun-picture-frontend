@@ -45,7 +45,7 @@ export async function getUserByIdUsingPost(
   body: API.UserDeleteQO,
   options?: { [key: string]: any }
 ) {
-  return request<API.BaseResponseUser_>('/api/user/getUserById', {
+  return request<API.BaseResponseUserDO_>('/api/user/getUserById', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
