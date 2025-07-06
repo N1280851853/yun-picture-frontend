@@ -46,7 +46,7 @@
               <img
                 style="height: 180px; object-fit: cover"
                 :alt="picture.name"
-                :src="picture.url"
+                :src="picture.thumbnailUrl ?? picture.url"
               />
             </template>
             <a-card-meta :title="picture.name">
@@ -74,7 +74,7 @@
 
 // 数据
 import { computed, onMounted, reactive, ref } from 'vue'
-import { listPagePictureVoUsingPost } from '@/api/pictureController'
+import { listPagePictureVoByCacheUsingPost, listPagePictureVoUsingPost } from '@/api/pictureController'
 import { message } from 'ant-design-vue'
 import { listPictureTagCategoryUsingGet } from '@/api/tagController'
 import { useRouter } from 'vue-router'

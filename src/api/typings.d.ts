@@ -1,4 +1,10 @@
 declare namespace API {
+  type BaseResponseInt_ = {
+    code?: number
+    data?: number
+    message?: string
+  }
+
   type BaseResponseListPageUserVO_ = {
     code?: number
     data?: ListPageUserVO
@@ -82,6 +88,10 @@ declare namespace API {
     picScale?: number
     picSize?: number
     picWidth?: number
+    reviewMessage?: string
+    reviewStatus?: number
+    reviewTime?: string
+    reviewerId?: number
     searchText?: string
     startUploadTime?: string
     tags?: string[]
@@ -100,6 +110,10 @@ declare namespace API {
     picScale?: number
     picSize?: number
     picWidth?: number
+    reviewMessage?: string
+    reviewStatus?: number
+    reviewTime?: string
+    reviewerId?: number
     tags?: string
     url?: string
     userId?: number
@@ -163,12 +177,29 @@ declare namespace API {
     picScale?: number
     picSize?: number
     picWidth?: number
+    reviewMessage?: string
+    reviewStatus?: number
+    reviewTime?: string
+    reviewerId?: number
+    thumbnailUrl?: string
     url?: string
     userId?: number
   }
 
   type PictureIdQO = {
     id?: number
+  }
+
+  type PictureQO = {
+    fileUrl?: string
+    id?: number
+    picName?: string
+  }
+
+  type PictureReviewQO = {
+    id?: number
+    reviewMessage?: string
+    reviewStatus?: number
   }
 
   type PictureTagCategory = {
@@ -184,6 +215,12 @@ declare namespace API {
     tags?: string[]
   }
 
+  type PictureUploadByBatchQO = {
+    count?: number
+    namePrefix?: string
+    searchText?: string
+  }
+
   type PictureVO = {
     category?: string
     gmtCreate?: string
@@ -196,7 +233,12 @@ declare namespace API {
     picScale?: number
     picSize?: number
     picWidth?: number
+    reviewMessage?: string
+    reviewStatus?: string
+    reviewTime?: string
+    reviewerId?: number
     tags?: string[]
+    thumbnailUrl?: string
     url?: string
     user?: LoginUserVO
     userId?: number
@@ -208,7 +250,9 @@ declare namespace API {
   }
 
   type uploadPictureUsingPOSTParams = {
+    fileUrl?: string
     id?: number
+    picName?: string
   }
 
   type UserAddQO = {

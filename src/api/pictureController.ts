@@ -77,6 +77,36 @@ export async function listPagePictureVoUsingPost(
   })
 }
 
+/** listPagePictureVOByCache POST /api/picture/listPagePictureVOByCache */
+export async function listPagePictureVoByCacheUsingPost(
+  body: API.ListPagePictureQO,
+  options?: { [key: string]: any }
+) {
+  return request<API.BaseResponsePageVOPictureVO_>('/api/picture/listPagePictureVOByCache', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  })
+}
+
+/** reviewPicture POST /api/picture/reviewPicture */
+export async function reviewPictureUsingPost(
+  body: API.PictureReviewQO,
+  options?: { [key: string]: any }
+) {
+  return request<API.BaseResponseObject_>('/api/picture/reviewPicture', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  })
+}
+
 /** updatePicture POST /api/picture/updatePicture */
 export async function updatePictureUsingPost(
   body: API.PictureUpdateQO,
@@ -129,6 +159,36 @@ export async function uploadPictureUsingPost(
     },
     data: formData,
     requestType: 'form',
+    ...(options || {}),
+  })
+}
+
+/** uploadPictureByBatch POST /api/picture/upload/batch */
+export async function uploadPictureByBatchUsingPost(
+  body: API.PictureUploadByBatchQO,
+  options?: { [key: string]: any }
+) {
+  return request<API.BaseResponseInt_>('/api/picture/upload/batch', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  })
+}
+
+/** uploadPictureByUrl POST /api/picture/uploadByUrl */
+export async function uploadPictureByUrlUsingPost(
+  body: API.PictureQO,
+  options?: { [key: string]: any }
+) {
+  return request<API.BaseResponsePictureVO_>('/api/picture/uploadByUrl', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
     ...(options || {}),
   })
 }
