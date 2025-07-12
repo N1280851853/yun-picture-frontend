@@ -22,6 +22,7 @@ import { uploadPictureByUrlUsingPost } from '@/api/pictureController'
 
 interface Props {
   picture?: API.PictureVO
+  spaceId?: number
   onSuccess?: (newPicture: API.PictureVO) => void
 }
 
@@ -40,6 +41,7 @@ const handleUpload = async () => {
       params.id = props.picture.id
     }
     const res = await uploadPictureByUrlUsingPost(params)
+    params.spaceId = props.spaceId
     if (res.data.code === 200 && res.data.data) {
       message.success('图片上传成功')
       // 将上传成功的图片信息传递给父组件

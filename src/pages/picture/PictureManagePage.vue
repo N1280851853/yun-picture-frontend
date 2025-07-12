@@ -193,6 +193,7 @@ const pagination = computed(() => {
 const fetchData = async () => {
   const res = await listPagePictureUsingPost({
     ...searchParams,
+    nullSpaceId: true
   })
   console.log('响应数据：', res.data)
   if (res.data.code === 200 && res.data.data) {
